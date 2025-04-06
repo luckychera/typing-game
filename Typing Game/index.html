@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Typing Game</title>
+    <link rel="icon" href="./image.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <header>
+            <div class="language-selector">
+                <select id="language-select" class="language-select">
+                    <option value="en">English</option>
+                    <option value="om">Afaan Oromo</option>
+                    <option value="am">አማርኛ</option>
+                    <option value="ti">ትግርኛ</option>
+                    <option value="so">Somali</option>
+                </select>
+            </div>
+            <h1 data-i18n="title">Typing Game</h1>
+            <p class="subtitle" data-i18n="subtitle">Improve your typing skills!</p>
+        </header>
+        <div class="game-container">
+            <div class="stats">
+                <div class="stat-box time-box">
+                    <span class="stat-label" data-i18n="time">Time</span>
+                    <span id="time" class="stat-value">60</span>
+                </div>
+                <div class="stat-box wpm-box">
+                    <span class="stat-label" data-i18n="wpm">WPM</span>
+                    <span id="wpm" class="stat-value">0</span>
+                </div>
+                <div class="stat-box accuracy-box">
+                    <span class="stat-label" data-i18n="accuracy">Accuracy</span>
+                    <span id="accuracy" class="stat-value">0%</span>
+                </div>
+            </div>
+
+            <div id="quote-display" class="quote-display"></div>
+            <textarea id="quote-input" class="quote-input" data-i18n-placeholder="input_placeholder" placeholder="Start typing here when the game begins..." disabled></textarea>
+
+            <div class="controls">
+                <button id="start-btn" class="btn start-btn" data-i18n="start_button">Start Game</button>
+                <button id="finish-btn" class="btn finish-btn" data-i18n="finish_button" disabled>Finish</button>
+                <button id="reset-btn" class="btn reset-btn" data-i18n="reset_button" disabled>Reset</button>
+                <div class="difficulty">
+                    <label for="difficulty" data-i18n="difficulty">Difficulty:</label>
+                    <select id="difficulty" class="difficulty-select">
+                        <option value="easy" data-i18n="easy">Easy</option>
+                        <option value="medium" selected data-i18n="medium">Medium</option>
+                        <option value="hard" data-i18n="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Modal -->
+        <div id="result-modal" class="modal">
+            <div class="modal-content">
+                <h2 data-i18n="game_over">Game Over!</h2>
+                
+                <div class="result-details">
+                    <div class="result-row">
+                        <span class="result-label" data-i18n="typing_speed">Typing Speed:</span>
+                        <span class="result-value"><span id="final-wpm">0</span> WPM</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label" data-i18n="accuracy">Accuracy:</span>
+                        <span class="result-value"><span id="final-accuracy">0</span>%</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label" data-i18n="correct_chars">Correct Chars:</span>
+                        <span class="result-value" id="correct-chars">0</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label" data-i18n="incorrect_chars">Incorrect Chars:</span>
+                        <span class="result-value" id="incorrect-chars">0</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label" data-i18n="misspelled_words">Misspelled Words:</span>
+                        <span class="result-value" id="misspelled-words">0</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label" data-i18n="time_used">Time Used:</span>
+                        <span class="result-value"><span id="time-used">0</span> seconds</span>
+                    </div>
+                </div>
+
+                <button id="close-modal" class="btn play-again-btn" data-i18n="play_again">Play Again</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p data-i18n="footer_text">© <span id="current-year">2025</span> Typing Word Game.It can be used For Educational.</p>
+        </footer>
+        <footer class="lucky">Developed By <a href="https://www.github.com/luckychera/typinggame/">Lucky TECH Game</a></footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
