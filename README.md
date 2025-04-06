@@ -1,6 +1,6 @@
 # Multi-Language Typing Game
 
-![Typing Game Screenshot](./Tuping-Game/Screenshot.jpg)
+![Typing Game Screenshot](./Screenshot.jpg)
 
 A responsive typing game that helps users improve their typing skills in multiple languages, including English, Afaan Oromo, Amharic, Tigrigna, and Somali.
 
